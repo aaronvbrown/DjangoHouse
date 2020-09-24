@@ -1,3 +1,5 @@
 
 /homesite/homesite/polls/static/images/*
+/homesite/homesite/schedule/static/images/*
+/homesite/db.sqlite3
 

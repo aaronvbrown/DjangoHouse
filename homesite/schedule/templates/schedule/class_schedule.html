@@ -1,0 +1,17 @@
+{% extends './base.html' %}
+
+{% block content %}
+    
+    {% if classes_scheduled %}
+        <ul>
+    {% for class in classes_scheduled %}
+        
+        <li><a href="/schedule/{{ student.id }}/homepage/">{{ class }}</a></li>
+    
+    {% endfor %}
+        </ul>
+    {% else %}
+        <p>No student was loaded.</p>
+    {% endif %}
+
+{% endblock %}

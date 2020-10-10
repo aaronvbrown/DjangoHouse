@@ -3,7 +3,7 @@ from typing import Optional
 from django.db import models
 
 # Create your models here.
-
+#  TODO:  add a user field to the "student" model as a foreign key to the ones in the db.
 class School(models.Model):
     name = models.CharField(max_length=250)
     
@@ -16,6 +16,9 @@ class Teacher(models.Model):
     name_last = models.CharField(max_length=50)
     email = models.EmailField(default="", blank=True)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
+    contact = models.URLField(max_length=128, default="", null=True)
+    title_preference = models.CharField(max_length=128, default="", null=True)
+    # office_hours
     
     def __str__(self):
         whole_name = self.name_first + " " + self.name_last
@@ -78,3 +81,5 @@ class ClassSchedule(models.Model):
     def __str__(self):
         return str(self.student) + " " + str(self.period) + " - " + str(self.course)
 
+    def period(self):
+        return self.period

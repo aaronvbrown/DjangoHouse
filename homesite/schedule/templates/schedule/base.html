@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>Home App</title>
+    <h1>This is our Home App</h1>
+    </head>
+<body>
+
+    {% comment %} <h2>This is a navbar.</h2> {% endcomment %}
+    {% include "./navbar.html" %}
+
+
+    {% block content %}
+    <p>replace me</p> 
+    {% endblock %}
+
+    {% block more_content %}
+    <p>replace me x 2</p>
+    {% endblock %}
+
+    {% block more_content3 %}
+    replace me x 3
+    {% endblock %}
+
+    </body>
+</html>
+
+

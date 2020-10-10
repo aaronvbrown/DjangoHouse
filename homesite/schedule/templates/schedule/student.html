@@ -1,0 +1,16 @@
+{% extends './base.html' %}
+
+{% block content %}
+    
+    {% if student_to_load %}
+        <ul>
+        {% for student in student_to_load %}
+            <h2>You're looking at {{student_to_load.name_first}}'s student page.</h2>
+            <li><a href="/schedule/{{ student.id }}/class_schedule/">schedule</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No student was loaded.</p>
+    {% endif %}
+
+{% endblock %}
